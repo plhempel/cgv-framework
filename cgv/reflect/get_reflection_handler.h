@@ -36,7 +36,7 @@ public:
 */
 template <typename T, typename Q>
 	bool get_member(T& variable, const std::string& target, Q& value) {
-			reflection_traits_info<Q>::traits_type rt_value;
+			typename reflection_traits_info<Q>::traits_type rt_value;
 #else
 namespace compatibility {
 	template <typename T, typename Q, typename RQ>

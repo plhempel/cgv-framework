@@ -33,7 +33,7 @@ public:
 /// call this function to set a variable inside a reflected instance from the given value
 template <typename T, typename Q>
 	bool set_member(T& variable, const std::string& target, const Q& value) {
-			reflection_traits_info<Q>::traits_type rt_value;
+			typename reflection_traits_info<Q>::traits_type rt_value;
 #else
 namespace compatibility {
 	template <typename T, typename Q, typename RQ>
