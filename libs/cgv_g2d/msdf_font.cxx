@@ -120,7 +120,8 @@ bool msdf_font::load_atlas_texture(cgv::render::context& ctx, const std::string&
 
 	cgv::data::data_format format;
 	cgv::data::data_view data;
-	return atlas_texture.create_from_image(format, data, ctx, filename, (unsigned char*)0, 0);
+	return atlas_texture.create_from_image(format, data, ctx, filename, (unsigned char*)0, 0)
+		|| (ctx.error(atlas_texture.cgv::render::render_component::last_error), false);
 }
 
 bool msdf_font::load_atlas_metadata(const std::string& filename) {
